@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+  <title>David Kitinberg | Portfolio</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap');
+
+    :root {
+      --bg: #0b1220;
+      --bg-soft: #121a2d;
+      --surface: #18233b;
+      --surface-2: #1f2d49;
+      --text: #e6ebf5;
+      --text-muted: #aab5cc;
+      --accent: #2b6ef2;
+      --accent-strong: #1f56c4;
+      --accent-glow: rgba(43, 110, 242, 0.25);
+      --border: rgba(170, 181, 204, 0.22);
+      --radius-lg: 20px;
+      --radius-md: 14px;
+      --shadow-lg: 0 18px 45px rgba(0, 0, 0, 0.35);
+      --container: 1120px;
+      --transition: 220ms ease;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+      background:
+        radial-gradient(circle at 10% 0%, rgba(43, 110, 242, 0.18), transparent 35%),
+        radial-gradient(circle at 85% 10%, rgba(67, 137, 255, 0.14), transparent 40%),
+        linear-gradient(165deg, #080d17 0%, #0b1220 35%, #0f1729 100%);
+      color: var(--text);
+      font-family: 'IBM Plex Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .container {
+      width: min(var(--container), calc(100% - 2.2rem));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(8, 13, 23, 0.82);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(170, 181, 204, 0.18);
+    }
+
+    .nav-wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.9rem 0;
+      gap: 1rem;
+    }
+
+    .brand {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .nav a {
+      text-decoration: none;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      padding: 0.45rem 0.8rem;
+      border-radius: 999px;
+      transition: color var(--transition), background var(--transition);
+    }
+
+    .nav a:hover,
+    .nav a:focus-visible {
+      color: var(--text);
+      background: rgba(43, 110, 242, 0.2);
+      outline: none;
+    }
+
+    main {
+      padding-bottom: 2.8rem;
+    }
+
+    section {
+      padding: 5rem 0 1.5rem;
+      animation: revealUp 0.7s ease both;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      align-items: center;
+      gap: 2rem;
+      min-height: 72vh;
+      padding-top: 3.8rem;
+    }
+
+    .hero-copy h1 {
+      margin: 0;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(2rem, 4.7vw, 3.6rem);
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-copy .highlight {
+      color: #8bb8ff;
+    }
+
+    .hero-copy p {
+      margin: 1.1rem 0 0;
+      max-width: 62ch;
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      line-height: 1.65;
+    }
+
+    .hero-actions {
+      margin-top: 1.8rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .btn {
+      border: 1px solid transparent;
+      border-radius: 12px;
+      padding: 0.75rem 1rem;
+      text-decoration: none;
+      font-weight: 600;
+      transition: transform var(--transition), box-shadow var(--transition), background var(--transition);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .btn-primary {
+      background: linear-gradient(120deg, var(--accent), #4e8cff);
+      color: white;
+      box-shadow: 0 8px 24px var(--accent-glow);
+    }
+
+    .btn-primary:hover,
+    .btn-primary:focus-visible {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(43, 110, 242, 0.35);
+      outline: none;
+    }
+
+    .btn-ghost {
+      border-color: var(--border);
+      color: var(--text);
+      background: rgba(170, 181, 204, 0.08);
+    }
+
+    .btn-ghost:hover,
+    .btn-ghost:focus-visible {
+      background: rgba(170, 181, 204, 0.16);
+      transform: translateY(-2px);
+      outline: none;
+    }
+
+    .hero-visual {
+      justify-self: end;
+      width: min(360px, 100%);
+      aspect-ratio: 4 / 5;
+      border-radius: var(--radius-lg);
+      padding: 0.85rem;
+      border: 1px solid var(--border);
+      background: linear-gradient(170deg, rgba(43, 110, 242, 0.2), rgba(15, 23, 41, 0.7));
+      box-shadow: var(--shadow-lg);
+    }
+
+    .hero-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: calc(var(--radius-lg) - 6px);
+      background: #0f1729;
+    }
+
+    .section-title {
+      margin: 0 0 1.1rem;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(1.55rem, 2.4vw, 2rem);
+      letter-spacing: -0.01em;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 1.2rem;
+      margin-top: 1rem;
+    }
+
+    .panel {
+      background: linear-gradient(160deg, rgba(24, 35, 59, 0.92), rgba(17, 25, 42, 0.92));
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.2rem;
+    }
+
+    .panel p {
+      margin: 0;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    .skills-groups {
+      display: grid;
+      gap: 0.9rem;
+    }
+
+    .skill-group h3 {
+      margin: 0 0 0.45rem;
+      font-size: 0.98rem;
+      color: #c9d6f1;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .chip {
+      background: rgba(43, 110, 242, 0.15);
+      border: 1px solid rgba(139, 184, 255, 0.3);
+      color: #d9e7ff;
+      border-radius: 999px;
+      padding: 0.35rem 0.7rem;
+      font-size: 0.86rem;
+      white-space: nowrap;
+    }
+
+    .projects-grid {
+      margin-top: 1rem;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .grades-grid {
+      margin-top: 1rem;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0.8rem;
+    }
+
+    .grade-card {
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border);
+      background: linear-gradient(160deg, rgba(24, 35, 59, 0.95), rgba(13, 20, 34, 0.95));
+      padding: 0.95rem;
+    }
+
+    .grade-card h3 {
+      margin: 0;
+      font-size: 0.95rem;
+      color: #d8e5ff;
+      font-weight: 600;
+    }
+
+    .grade-card p {
+      margin: 0.5rem 0 0;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.15rem;
+      color: #ffffff;
+      font-weight: 700;
+    }
+
+    .project-card {
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border);
+      background: linear-gradient(155deg, rgba(24, 35, 59, 0.95), rgba(13, 20, 34, 0.95));
+      padding: 1.1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+      transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+    }
+
+    .project-card:hover,
+    .project-card:focus-within {
+      transform: translateY(-5px);
+      border-color: rgba(139, 184, 255, 0.6);
+      box-shadow: 0 12px 26px rgba(0, 0, 0, 0.3);
+    }
+
+    .project-card h3 {
+      margin: 0;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.2rem;
+    }
+
+    .project-card p {
+      margin: 0;
+      color: var(--text-muted);
+      line-height: 1.6;
+      font-size: 0.97rem;
+    }
+
+    .project-link {
+      margin-top: auto;
+      align-self: start;
+      text-decoration: none;
+      color: #b9d3ff;
+      font-weight: 600;
+      border-bottom: 1px solid transparent;
+      transition: border-color var(--transition), color var(--transition);
+    }
+
+    .project-link:hover,
+    .project-link:focus-visible {
+      color: #deebff;
+      border-color: currentColor;
+      outline: none;
+    }
+
+    .contact-block {
+      margin-top: 1rem;
+      display: grid;
+      gap: 0.8rem;
+      background: linear-gradient(160deg, rgba(24, 35, 59, 0.95), rgba(15, 23, 41, 0.95));
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.2rem;
+    }
+
+    .contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      align-items: baseline;
+    }
+
+    .contact-label {
+      min-width: 85px;
+      font-weight: 600;
+      color: #d2dff8;
+    }
+
+    .contact-row a {
+      color: #b8d2ff;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color var(--transition), color var(--transition);
+      overflow-wrap: anywhere;
+    }
+
+    .contact-row a:hover,
+    .contact-row a:focus-visible {
+      color: #deebff;
+      border-color: currentColor;
+      outline: none;
+    }
+
+    .site-footer {
+      padding: 2rem 0 2.6rem;
+      color: var(--text-muted);
+      font-size: 0.94rem;
+      text-align: center;
+    }
+
+    :focus-visible {
+      outline: 2px solid #89b4ff;
+      outline-offset: 2px;
+      border-radius: 8px;
+    }
+
+    @media (max-width: 980px) {
+      .hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+
+      .hero-visual {
+        justify-self: start;
+        width: min(320px, 100%);
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .projects-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .grades-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      section {
+        padding: 4.1rem 0 1.15rem;
+      }
+
+      .nav-wrap {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .grades-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-copy p {
+        font-size: 1rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
+    @keyframes revealUp {
+      from {
+        opacity: 0;
+        transform: translateY(8px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="#home">David Kitinberg</a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="#about">About</a>
+        <a href="#grades">Grades</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="home" class="container">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <h1 id="hero-title">David Kitinberg<br ><span class="highlight">Computer Science Student at Ariel University</span></h1>
+        <p>
+          I design reliable software systems at the intersection of embedded hardware and automation. My recent work centers on
+          building scalable BLE validation workflows, modernizing test infrastructure, and reducing manual QA effort through
+          robust end-to-end tooling.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#projects">View Projects</a>
+          <a class="btn btn-ghost" href="#contact">Get In Touch</a>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <img src="profile.jpg" alt="David Kitinberg" >
+      </div>
+    </section>
+
+    <section id="about" aria-labelledby="about-title">
+      <h2 class="section-title" id="about-title">About Me</h2>
+      <div class="about-grid">
+        <article class="panel">
+          <p>
+            I am pursuing a B.Sc. in Computer Science at Ariel University (2023-2026), with a strong focus on systems,
+            networking, and software engineering fundamentals. During my Texas Instruments internship, I pioneered the internal
+            adoption of Zephyr RTOS by architecting a full automation framework from scratch for BLE profile testing. I debugged
+            and adapted AutoPTS and Twister across diverse TI boards, then engineered host-to-device automation scripts that
+            bridged modern test software with physical hardware. This significantly reduced manual testing overhead while
+            increasing validation reliability.
+          </p>
+        </article>
+
+        <aside class="panel" aria-labelledby="skills-title">
+          <h2 class="section-title" id="skills-title">Skills</h2>
+          <div class="skills-groups">
+            <div class="skill-group">
+              <h3>Languages</h3>
+              <div class="chips">
+                <span class="chip">C</span>
+                <span class="chip">C++</span>
+                <span class="chip">Java</span>
+                <span class="chip">Python</span>
+              </div>
+            </div>
+            <div class="skill-group">
+              <h3>Frameworks & Platforms</h3>
+              <div class="chips">
+                <span class="chip">Zephyr Framework</span>
+                <span class="chip">AWS</span>
+                <span class="chip">Linux</span>
+                <span class="chip">WSL</span>
+              </div>
+            </div>
+            <div class="skill-group">
+              <h3>Domain Expertise</h3>
+              <div class="chips">
+                <span class="chip">Embedded Test Automation</span>
+                <span class="chip">BLE Protocol Validation</span>
+                <span class="chip">Networking</span>
+              </div>
+            </div>
+            <div class="skill-group">
+              <h3>Foundations</h3>
+              <div class="chips">
+                <span class="chip">Operating Systems</span>
+                <span class="chip">OOP</span>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="projects" aria-labelledby="projects-title">
+    <section id="grades" aria-labelledby="grades-title">
+      <h2 class="section-title" id="grades-title">Grades</h2>
+      <div class="grades-grid">
+        <article class="grade-card">
+          <h3>Program Engineering</h3>
+          <p>96</p>
+        </article>
+        <article class="grade-card">
+          <h3>Operating Systems</h3>
+          <p>100</p>
+        </article>
+        <article class="grade-card">
+          <h3>Data Bases</h3>
+          <p>88</p>
+        </article>
+        <article class="grade-card">
+          <h3>Algorithms</h3>
+          <p>81</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="projects" aria-labelledby="projects-title">
+      <h2 class="section-title" id="projects-title">Projects</h2>
+      <div class="projects-grid">
+        <article class="project-card">
+          <h3>Texas Instruments Internship</h3>
+          <p>
+            Built an automation testing tool for BLE profiles. Integrated autoPTS and automated the entire testing process for TI
+            boards utilizing the Zephyr framework and Twister.
+          </p>
+          <div class="chips" aria-label="Texas Instruments project technologies">
+            <span class="chip">BLE</span>
+            <span class="chip">Zephyr</span>
+            <span class="chip">Twister</span>
+            <span class="chip">Embedded Automation</span>
+          </div>
+          <a class="project-link" href="https://github.com/davidkitinberg/ti-embedded-stack" target="_blank" rel="noopener noreferrer">View Repository</a>
+        </article>
+
+        <article class="project-card">
+          <h3>EasyMove</h3>
+          <p>
+            An Android application featuring user authentication, comprehensive inventory management, and a system for finding
+            partners.
+          </p>
+          <div class="chips" aria-label="EasyMove project technologies">
+            <span class="chip">Android</span>
+            <span class="chip">Java</span>
+            <span class="chip">Authentication</span>
+            <span class="chip">Inventory Management</span>
+          </div>
+          <a class="project-link" href="https://github.com/davidkitinberg/EasyMove" target="_blank" rel="noopener noreferrer">View Repository</a>
+        </article>
+
+        <article class="project-card">
+          <h3>Image Processing</h3>
+          <p>
+            Foundational image processing algorithms and exercises.
+          </p>
+          <div class="chips" aria-label="Image processing project technologies">
+            <span class="chip">Python</span>
+            <span class="chip">Image Algorithms</span>
+            <span class="chip">Computer Vision Basics</span>
+          </div>
+          <a class="project-link" href="https://github.com/davidkitinberg/image_processing_ex1" target="_blank" rel="noopener noreferrer">View Repository</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" aria-labelledby="contact-title">
+      <h2 class="section-title" id="contact-title">Contact</h2>
+      <div class="contact-block">
+        <div class="contact-row">
+          <span class="contact-label">Email:</span>
+          <a href="mailto:davidkitinberg@gmail.com">davidkitinberg@gmail.com</a>
+        </div>
+        <div class="contact-row">
+          <span class="contact-label">Phone:</span>
+          <a href="tel:0504293939">050-4293939</a>
+        </div>
+        <div class="contact-row">
+          <span class="contact-label">LinkedIn:</span>
+          <a href="https://www.linkedin.com/in/david-kitinberg-744933227/" target="_blank" rel="noopener noreferrer">linkedin.com/in/david-kitinberg-744933227</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">© 2026 David Kitinberg. Built for GitHub Pages.</div>
+  </footer>
+</body>
+</html>
