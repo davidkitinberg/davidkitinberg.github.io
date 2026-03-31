@@ -185,18 +185,22 @@
     .hero-visual {
       justify-self: end;
       width: min(360px, 100%);
-      aspect-ratio: 4 / 5;
+      aspect-ratio: 1 / 1;
       border-radius: var(--radius-lg);
       padding: 0.85rem;
       border: 1px solid var(--border);
       background: linear-gradient(170deg, rgba(43, 110, 242, 0.2), rgba(15, 23, 41, 0.7));
       box-shadow: var(--shadow-lg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .hero-visual img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
+      object-position: center;
       border-radius: calc(var(--radius-lg) - 6px);
       background: #0f1729;
     }
