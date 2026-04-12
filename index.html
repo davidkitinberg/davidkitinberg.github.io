@@ -183,10 +183,11 @@
     }
 
     .hero-visual {
+      position: relative;
       justify-self: end;
       width: min(360px, 100%);
       aspect-ratio: 1 / 1;
-      border-radius: var(--radius-lg);
+      border-radius: 50%;
       padding: 0.85rem;
       border: 1px solid var(--border);
       background: linear-gradient(170deg, rgba(43, 110, 242, 0.2), rgba(15, 23, 41, 0.7));
@@ -199,10 +200,38 @@
     .hero-visual img {
       width: 100%;
       height: 100%;
-      object-fit: contain;
-      object-position: center;
-      border-radius: calc(var(--radius-lg) - 6px);
+      object-fit: cover;
+      object-position: center 30%;
+      transform: scale(1);
+      border-radius: 50%;
       background: #0f1729;
+    }
+
+    .availability-badge {
+      position: absolute;
+      right: 0.2rem;
+      bottom: 0.8rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      background: rgba(13, 25, 19, 0.94);
+      border: 1px solid rgba(105, 220, 130, 0.65);
+      border-radius: 999px;
+      padding: 0.45rem 0.7rem;
+      color: #d6ffe1;
+      font-size: 0.78rem;
+      font-weight: 600;
+      box-shadow: 0 8px 18px rgba(27, 84, 42, 0.35);
+    }
+
+    .availability-dot {
+      width: 0.56rem;
+      height: 0.56rem;
+      border-radius: 50%;
+      background: #2fe06f;
+      box-shadow: 0 0 0 4px rgba(47, 224, 111, 0.2);
+      animation: pulseDot 1.8s ease-in-out infinite;
+      flex-shrink: 0;
     }
 
     .section-title {
@@ -230,6 +259,24 @@
       margin: 0;
       color: var(--text-muted);
       line-height: 1.7;
+    }
+
+    .panel h3 {
+      margin: 0;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.1rem;
+      color: #e3ecff;
+    }
+
+    .experience-period {
+      margin: 0.4rem 0 0.85rem;
+      color: #b9c7e5;
+      font-weight: 600;
+      font-size: 0.92rem;
+    }
+
+    .experience-summary {
+      margin-top: 0.85rem !important;
     }
 
     .skills-groups {
@@ -462,6 +509,17 @@
         transform: translateY(0);
       }
     }
+
+    @keyframes pulseDot {
+      0%,
+      100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.2);
+      }
+    }
   </style>
 </head>
 <body>
@@ -471,6 +529,7 @@
       <nav class="nav" aria-label="Primary navigation">
         <a href="#about">About</a>
         <a href="#grades">Grades</a>
+        <a href="#military">Military</a>
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -480,7 +539,7 @@
   <main id="home" class="container">
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero-copy">
-        <h1 id="hero-title">David Kitinberg<br ><span class="highlight">Computer Science Student at Ariel University</span></h1>
+        <h1 id="hero-title">David Kitinberg<br ><span class="highlight">Software Developer</span></h1>
         <p>
           I design reliable software systems at the intersection of embedded hardware and automation. My recent work centers on
           building scalable BLE validation workflows, modernizing test infrastructure, and reducing manual QA effort through
@@ -494,6 +553,10 @@
 
       <div class="hero-visual">
         <img src="profile.jpg" alt="David Kitinberg" >
+        <span class="availability-badge">
+          <span class="availability-dot" aria-hidden="true"></span>
+          Open to opportunities
+        </span>
       </div>
     </section>
 
@@ -521,6 +584,8 @@
                 <span class="chip">C++</span>
                 <span class="chip">Java</span>
                 <span class="chip">Python</span>
+                <span class="chip">MySQL</span>
+                <span class="chip">MongoDB</span>
               </div>
             </div>
             <div class="skill-group">
@@ -528,6 +593,7 @@
               <div class="chips">
                 <span class="chip">Zephyr Framework</span>
                 <span class="chip">AWS</span>
+                <span class="chip">Docker</span>
                 <span class="chip">Linux</span>
                 <span class="chip">WSL</span>
               </div>
@@ -572,6 +638,24 @@
           <p>81</p>
         </article>
       </div>
+    </section>
+
+    <section id="military" aria-labelledby="military-title">
+      <h2 class="section-title" id="military-title">Military</h2>
+      <article class="panel">
+        <h3>Combat Soldier, Kfir Brigade - Israel Defense Forces (IDF)</h3>
+        <p class="experience-period">2018-2021</p>
+        <div class="chips" aria-label="Military service skills">
+          <span class="chip">Drone Operation</span>
+          <span class="chip">Armored Vehicle Driving</span>
+          <span class="chip">Marksmanship</span>
+          <span class="chip">Tactical Security</span>
+        </div>
+        <p class="experience-summary">
+          Completed full military service as an infantry combat soldier. Trained and certified in drone operation,
+          armored vehicle driving, marksmanship, and tactical security skills.
+        </p>
+      </article>
     </section>
 
     <section id="projects" aria-labelledby="projects-title">
