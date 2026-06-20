@@ -23,6 +23,7 @@
         <li><a href="#skills">Skills</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#military">Military</a></li>
+        <li><a href="#certifications">Certifications</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
       <div style="display:flex;align-items:center;gap:0.75rem;">
@@ -81,32 +82,35 @@
       <div class="about-grid">
         <div class="about-text reveal">
           <p>
-            I'm a final-year <strong>Computer Science student</strong> at Ariel University (2023–2026), with a
-            strong focus on <span class="highlight">systems programming</span>, <span class="highlight">networking</span>,
-            and embedded software. My coursework and internship experience have given me a solid foundation in
-            operating systems, BLE protocols, and test automation.
+            I'm a 3rd-year <strong>Computer Science student</strong> at Ariel University (Dec 2023 – Jul 2026,
+            expected), with a strong focus on <span class="highlight">embedded systems</span>,
+            <span class="highlight">networking</span>, and software test automation. My coursework and internship
+            experience have given me a solid foundation in operating systems, BLE protocols, and real-time firmware.
           </p>
           <p>
-            During my internship at <strong>Texas Instruments</strong> I architected automation frameworks for BLE
-            validation on <strong>Zephyr RTOS</strong>. I also worked as part of the <strong>ClarifyMed</strong> team,
-            building the AI translation, summarization and text-to-speech pipeline for a medical-summarization app
-            that won 2nd place at the AI For Life Hackathon.
+            I'm currently an <strong>Embedded Software Engineering Intern at Texas Instruments</strong>, building
+            automated BLE compliance-testing frameworks on <strong>Zephyr RTOS</strong>, and a
+            <strong>Student Researcher</strong> at the Ariel University Research Lab, developing real-time embedded
+            firmware for defense-sector communication. I also worked as part of the <strong>ClarifyMed</strong> team,
+            building the AI translation and text-to-speech pipeline for a medical-summarization app that won 2nd
+            place at a hackathon.
           </p>
           <p>
             Outside of coursework, I enjoy exploring embedded systems, automation tooling, and AI-assisted workflows.
-            Before starting my degree, I served as a combat soldier in the Israel Defense Forces.
+            I'm fluent in Hebrew, English, and Russian. Before starting my degree, I served as a combat soldier in
+            the Israel Defense Forces.
           </p>
           <div class="about-stats">
             <div class="stat">
-              <span class="stat-num">4+</span>
+              <span class="stat-num">5+</span>
               <span class="stat-label">Projects</span>
             </div>
             <div class="stat">
-              <span class="stat-num">4th</span>
+              <span class="stat-num">3rd</span>
               <span class="stat-label">Year CS</span>
             </div>
             <div class="stat">
-              <span class="stat-num">5+</span>
+              <span class="stat-num">3</span>
               <span class="stat-label">Languages</span>
             </div>
           </div>
@@ -136,20 +140,20 @@
           <div class="exp-card-header">
             <div class="exp-company-info">
               <div class="exp-role-badge">Internship</div>
-              <h3 class="exp-role">Software Engineering Intern</h3>
+              <h3 class="exp-role">Embedded Software Engineering Intern</h3>
               <p class="exp-company">Texas Instruments</p>
               <p class="exp-division">Embedded Systems / BLE Validation</p>
             </div>
             <div class="exp-meta">
-              <span class="exp-period">Dec 2025 – Jul 2026</span>
+              <span class="exp-period">Dec 2025 – Present</span>
               <span class="exp-status-dot"></span>
             </div>
           </div>
 
           <p class="exp-desc">
-            Pioneered the internal adoption of <strong>Zephyr RTOS</strong> by architecting a full automation
-            framework from scratch for <span class="highlight">BLE profile testing</span>, bridging modern test
-            software with physical hardware and reducing manual QA effort across the team.
+            Developed an automated testing framework for <span class="highlight">BLE profiles</span> using
+            <strong>Zephyr RTOS</strong>, leveraging Twister and AutoPTS to ensure full compliance with Bluetooth
+            SIG qualification standards &mdash; reducing manual testing time by over <strong>40%</strong>.
           </p>
 
           <div class="exp-responsibilities reveal">
@@ -157,7 +161,7 @@
             <ul class="exp-list">
               <li>Debugged and adapted AutoPTS and Twister across diverse TI boards.</li>
               <li>Engineered host-to-device automation scripts bridging test software with physical hardware.</li>
-              <li>Reduced manual BLE testing overhead while increasing validation reliability.</li>
+              <li>Built an automated BLE compliance-testing pipeline, reducing manual testing time by over 40%.</li>
               <li>Built and maintained automated test pipelines for embedded BLE profile validation.</li>
               <li>Collaborated with hardware and firmware engineers to debug cross-board test failures.</li>
             </ul>
@@ -173,12 +177,23 @@
             </p>
           </div>
 
+          <div class="exp-highlight reveal">
+            <div class="exp-highlight-badge">Bug Fix</div>
+            <h4 class="exp-highlight-title">OpenOCD Reset-Handling Defect</h4>
+            <p class="exp-highlight-desc">
+              Root-caused a critical reset-handling defect in <strong>OpenOCD's</strong> board-reset implementation
+              that was destabilizing the test environment, resolving it by issuing custom TCL commands to OpenOCD
+              to trigger a reliable software reset and restore full board connectivity for the automated test suite.
+            </p>
+          </div>
+
           <div class="exp-skills reveal">
             <h4 class="exp-sub-title">Skills Gained</h4>
             <div class="exp-skills-grid">
               <span class="exp-skill-badge">Zephyr RTOS</span>
               <span class="exp-skill-badge">AutoPTS</span>
               <span class="exp-skill-badge">Twister</span>
+              <span class="exp-skill-badge">OpenOCD</span>
               <span class="exp-skill-badge">BLE Protocol Validation</span>
               <span class="exp-skill-badge">Embedded Test Automation</span>
               <span class="exp-skill-badge">C</span>
@@ -188,6 +203,50 @@
               <span class="exp-skill-badge">Host-Device Scripting</span>
               <span class="exp-skill-badge">Hardware Debugging</span>
               <span class="exp-skill-badge">Problem Solving</span>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="exp-card reveal">
+          <div class="exp-card-header">
+            <div class="exp-company-info">
+              <div class="exp-role-badge">Research</div>
+              <h3 class="exp-role">Student Researcher</h3>
+              <p class="exp-company">Ariel University Research Lab</p>
+              <p class="exp-division">Embedded Firmware / Defense Applications</p>
+            </div>
+            <div class="exp-meta">
+              <span class="exp-period">Mar 2026 – Present</span>
+              <span class="exp-status-dot"></span>
+            </div>
+          </div>
+
+          <p class="exp-desc">
+            Developing real-time embedded firmware using <strong>PlatformIO</strong> and the
+            <span class="highlight">ESP-NOW</span> wireless protocol for low-latency device-to-device communication
+            in defense-sector applications.
+          </p>
+
+          <div class="exp-responsibilities reveal">
+            <h4 class="exp-sub-title">What I Worked On</h4>
+            <ul class="exp-list">
+              <li>Built real-time embedded firmware for low-latency device-to-device communication.</li>
+              <li>Implemented interrupt-driven sleep/wake cycles to optimize power consumption.</li>
+              <li>Preserved data throughput and reliability under strict hardware-timing constraints.</li>
+            </ul>
+          </div>
+
+          <div class="exp-skills reveal">
+            <h4 class="exp-sub-title">Skills Gained</h4>
+            <div class="exp-skills-grid">
+              <span class="exp-skill-badge">PlatformIO</span>
+              <span class="exp-skill-badge">ESP-NOW</span>
+              <span class="exp-skill-badge">Embedded RTOS</span>
+              <span class="exp-skill-badge">Power Optimization</span>
+              <span class="exp-skill-badge">Interrupt-Driven Programming</span>
+              <span class="exp-skill-badge">Real-Time Systems</span>
+              <span class="exp-skill-badge">C / C++</span>
             </div>
           </div>
 
@@ -211,7 +270,7 @@
               <h3>B.Sc. in Computer Science</h3>
               <p class="edu-university">Ariel University</p>
             </div>
-            <span class="edu-date">2023 – 2026</span>
+            <span class="edu-date">Dec 2023 – Jul 2026 (Expected)</span>
           </div>
           <p class="edu-label">Relevant Coursework</p>
           <div class="edu-courses">
@@ -219,6 +278,16 @@
               <span class="course-name">Operating Systems</span>
               <span class="course-grade">100</span>
               <span class="course-desc">Process management, multithreading & synchronization, memory management</span>
+            </div>
+            <div class="edu-course">
+              <span class="course-name">Object-Oriented Programming</span>
+              <span class="course-grade">92</span>
+              <span class="course-desc">OOP principles, design patterns, inheritance, polymorphism</span>
+            </div>
+            <div class="edu-course">
+              <span class="course-name">Networking & Communications</span>
+              <span class="course-grade">91</span>
+              <span class="course-desc">TCP/IP, socket programming, client-server architectures</span>
             </div>
             <div class="edu-course">
               <span class="course-name">Program Engineering</span>
@@ -237,8 +306,9 @@
             </div>
           </div>
           <div class="edu-extra-tags">
-            <span class="tag">Object-Oriented Programming</span>
-            <span class="tag">Networking</span>
+            <span class="tag">Cloud Computing (AWS)</span>
+            <span class="tag">Computer Vision</span>
+            <span class="tag">Deep Learning for NLP</span>
             <span class="tag">Embedded Systems</span>
           </div>
         </div>
@@ -274,9 +344,12 @@
           </div>
           <div class="skill-tags">
             <span class="tag">Zephyr RTOS</span>
+            <span class="tag">Embedded RTOS</span>
             <span class="tag">BLE Protocol</span>
             <span class="tag">Linux</span>
             <span class="tag">WSL</span>
+            <span class="tag">PlatformIO</span>
+            <span class="tag">ESP-NOW</span>
             <span class="tag">Embedded Test Automation</span>
           </div>
         </div>
@@ -304,6 +377,7 @@
             <span class="tag">Gemini API</span>
             <span class="tag">Document Processing</span>
             <span class="tag">Multilingual TTS</span>
+            <span class="tag">Deep Learning</span>
           </div>
         </div>
 
@@ -317,6 +391,9 @@
             <span class="tag">OOP</span>
             <span class="tag">Networking</span>
             <span class="tag">Data Structures & Algorithms</span>
+            <span class="tag">Socket Programming</span>
+            <span class="tag">Multithreaded POSIX Client-Server Architectures</span>
+            <span class="tag">Server Lifecycle Management</span>
           </div>
         </div>
 
@@ -330,36 +407,62 @@
       <h2 class="section-title reveal">Featured <span class="gradient-text">Projects</span></h2>
       <div class="projects-grid">
 
-        <!-- ===== ClarifyMed — Hackathon Winner Card ===== -->
-        <div class="project-card winner reveal">
-          <div class="winner-award-banner">
-            <span class="winner-trophy">🥈</span>
-            <span>2nd Place &mdash; AI For Life Hackathon &middot; Ariel University &middot; 2025</span>
-            <span class="winner-prize">$2,000 Prize</span>
+        <!-- ===== TI Embedded Stack — Main Featured Project ===== -->
+        <div class="project-card featured-hero reveal">
+          <div class="featured-hero-banner">
+            <span>🚀</span>
+            <span>Main Project &middot; Texas Instruments Internship</span>
           </div>
           <div class="winner-body">
             <div class="project-top">
-              <span class="project-icon">🩺</span>
+              <span class="project-icon">📡</span>
               <div class="project-links">
-                <a href="https://github.com/roy3177/ClarifyMed" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="GitHub">
+                <a href="https://github.com/davidkitinberg/ti-embedded-stack" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="GitHub">
                   <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.742 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
                 </a>
               </div>
             </div>
-            <h3 class="project-title winner-title">ClarifyMed</h3>
-            <p class="project-desc winner-desc">
-              AI-powered medical visit summarizer that transforms complex clinical documents and audio recordings
-              into clear, accessible patient summaries in <strong>5 languages</strong> (Hebrew, English, Arabic,
-              Russian &amp; Amharic). I built the AI pipeline handling translation, Gemini-based summarization, and
-              multilingual text-to-speech narration, working as part of a 3-person team.
+            <h3 class="project-title">TI Embedded Stack</h3>
+            <p class="project-desc">
+              Automated testing framework for BLE profiles built on <strong>Zephyr RTOS</strong>, integrating
+              AutoPTS and Twister to ensure full compliance with Bluetooth SIG qualification standards &mdash;
+              reducing manual testing time by over <strong>40%</strong>. Also includes a fix for a critical
+              reset-handling defect in OpenOCD's board-reset implementation that was destabilizing the test
+              environment.
             </p>
             <div class="project-tech">
+              <span class="tech-tag">Zephyr RTOS</span>
+              <span class="tech-tag">AutoPTS</span>
+              <span class="tech-tag">Twister</span>
+              <span class="tech-tag">OpenOCD</span>
+              <span class="tech-tag">BLE</span>
+              <span class="tech-tag">C</span>
               <span class="tech-tag">Python</span>
-              <span class="tech-tag">Google Gemini</span>
-              <span class="tech-tag">TTS</span>
-              <span class="tech-tag">Multilingual AI</span>
-              <span class="tech-tag">Flask</span>
             </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-badge">2nd Place 🥈</div>
+          <div class="project-top">
+            <span class="project-icon">🩺</span>
+            <div class="project-links">
+              <a href="https://github.com/roy3177/ClarifyMed" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="GitHub">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.742 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="project-title">ClarifyMed</h3>
+          <p class="project-desc">
+            Medical-tech hackathon project &mdash; an automated AI pipeline that translates dense clinical reports
+            into user-friendly video animations. I built the AI pipeline integrating the Gemini API with Google TTS
+            to simplify patient communication. Secured 2nd place among competing teams.
+          </p>
+          <div class="project-tech">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Gemini API</span>
+            <span class="tech-tag">Google TTS</span>
+            <span class="tech-tag">AI Pipeline</span>
           </div>
         </div>
 
@@ -465,6 +568,56 @@
             <span class="tag">Tactical Security</span>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CERTIFICATIONS ========== -->
+  <section id="certifications">
+    <div class="container">
+      <h2 class="section-title reveal">Certif<span class="gradient-text">ications</span></h2>
+      <div class="certs-grid">
+
+        <div class="cert-card reveal">
+          <div class="cert-header">
+            <div class="cert-icon">☁️</div>
+            <div class="cert-meta">
+              <h3>AWS Certified Cloud Practitioner</h3>
+              <p class="cert-issuer">Amazon Web Services (AWS)</p>
+            </div>
+          </div>
+          <p class="cert-desc">
+            Foundational certification covering core cloud concepts, AWS global infrastructure, and the shared
+            responsibility model.
+          </p>
+        </div>
+
+        <div class="cert-card reveal">
+          <div class="cert-header">
+            <div class="cert-icon">👨‍💻</div>
+            <div class="cert-meta">
+              <h3>AWS Certified Cloud Developer</h3>
+              <p class="cert-issuer">Amazon Web Services (AWS)</p>
+            </div>
+          </div>
+          <p class="cert-desc">
+            Developer-focused certification covering building and deploying applications on AWS.
+          </p>
+        </div>
+
+        <div class="cert-card reveal">
+          <div class="cert-header">
+            <div class="cert-icon">📶</div>
+            <div class="cert-meta">
+              <h3>Nordic Semiconductor BLE Fundamentals</h3>
+              <p class="cert-issuer">Nordic Semiconductor</p>
+            </div>
+          </div>
+          <p class="cert-desc">
+            Core Bluetooth Low Energy concepts including GATT/GAP, pairing, and BLE stack architecture.
+          </p>
+        </div>
+
       </div>
     </div>
   </section>

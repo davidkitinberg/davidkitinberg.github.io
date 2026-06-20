@@ -525,6 +525,7 @@ section {
   box-shadow: 0 0 0 3px #2b6ef2;
 }
 .exp-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(43,110,242,0.18); }
+.exp-card + .exp-card { margin-top: 2.5rem; }
 
 .exp-card-header {
   display: flex; justify-content: space-between; align-items: flex-start;
@@ -961,6 +962,36 @@ section {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1.5rem;
+}
+
+/* ---- Featured hero card (main project, blue) ---- */
+.project-card.featured-hero {
+  grid-column: 1 / -1;
+  padding: 0;
+  gap: 0;
+  border-color: rgba(43,110,242,0.5);
+  background: linear-gradient(135deg, rgba(43,110,242,0.08) 0%, var(--bg-card) 60%);
+  overflow: hidden;
+}
+body.dark .project-card.featured-hero {
+  background: linear-gradient(135deg, rgba(43,110,242,0.1) 0%, #0d0d1a 60%);
+}
+.project-card.featured-hero:hover {
+  border-color: rgba(43,110,242,0.85);
+  box-shadow: 0 0 50px rgba(43,110,242,0.25), var(--shadow);
+}
+.featured-hero-banner {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.65rem 2rem;
+  background: linear-gradient(90deg, rgba(43,110,242,0.18), rgba(6,182,212,0.08), rgba(43,110,242,0.18));
+  border-bottom: 1px solid rgba(43,110,242,0.3);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--primary);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 
 /* ---- Winner / Hackathon card ---- */
